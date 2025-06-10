@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>User Form</title>
+  <link href="user.css" rel="stylesheet">
+</head>
+<body>
+
+  <h2>User Information</h2>
+
+  <div class="form">
+    <label for="name">Name:</label>
+    <input id="name" type="text" placeholder="Enter your name">
+
+    <label for="email">Email ID:</label>
+    <input id="email" type="email" placeholder="Enter your email">
+
+    <label for="contact">Contact No:</label>
+    <input id="contact" type="tel" placeholder="Enter your contact number">
+
+    <label for="nationality">Nationality:</label>
+    <input id="nationality" type="text" placeholder="Enter your nationality">
+
+    <button onclick="showData()">Submit</button><br><br>
+   
+
+    <div id="result"></div>
+     email id:<a href="saniyarosebenny@gmail.com"></a><br>
+  contact:8078145168<br>
+  </div>
+  
+
+  <!-- Firebase Integration Script -->
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/11.9.0/firebase-app.js";
+    import { getAnalytics } from "https://www.gstatic.com/firebasejs/11.9.0/firebase-analytics.js";
+    import { getFirestore, collection, addDoc } from "https://www.gstatic.com/firebasejs/11.9.0/firebase-firestore.js";
+
+    const firebaseConfig = {
+      apiKey: "AIzaSyC6Q-vHr4JLURdFx9SO5TwqDgLBck-ThUk",
+      authDomain: "my-portfolio-b0ffd.firebaseapp.com",
+      projectId: "my-portfolio-b0ffd",
+      storageBucket: "my-portfolio-b0ffd.firebasestorage.app",
+      messagingSenderId: "524217160836",
+      appId: "1:524217160836:web:be42d240006ff831f49ed1",
+      measurementId: "G-VQQFB835YY"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const analytics = getAnalytics(app);
+    const db = getFirestore(app);
+
+    // Save form data to Firestore and show result
+    window.showData = async function () {
+      const name = document.getElementById("name").value;
+      const email = document.getElementById("email").value;
+      const contact = document.getElementById("contact").value;
+      const nationality = document.getElementById("nationality").value;
+
+      try {
+        await addDoc(collection(db, "users"), {
+          name: name,
+          email: email,
+          contact: contact,
+          nationality: nationality
+        });
+
+        alert("Details submitted and saved to Firebase!");
+
+        document.getElementById("result").innerHTML =
+          "<h3>Your Details:</h3>" +
+          "<strong>Name:</strong> " + name + "<br>" +
+          "<strong>Email:</strong> " + email + "<br>" +
+          "<strong>Contact:</strong> " + contact + "<br>" +
+          "<strong>Nationality:</strong> " + nationality;
+
+        // Clear input fields
+        document.getElementById("name").value = "";
+        document.getElementById("email").value = "";
+        document.getElementById("contact").value = "";
+        document.getElementById("nationality").value = "";
+
+      } catch (error) {
+        console.error("Error saving data: ", error);
+        alert("Something went wrong. Please try again.");
+      }
+    };
+  </script>
+
+</body>
+</html>
