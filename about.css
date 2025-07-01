@@ -1,0 +1,51 @@
+ body {
+  background-color: #ffeef5; /* Light pink background */
+  margin: 0;
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.content {
+  background-color: white;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  width: 90%;
+  max-width: 700px;
+  text-align: center;
+}
+
+h1 {
+  color: #d14d72;
+  margin-bottom: 20px;
+  font-size: 2em;
+  text-decoration: underline;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+th, td {
+  padding: 12px;
+  border: 1px solid #ddd;
+  text-align: left;
+}
+
+th {
+  background-color: #fcbfdc;
+  color: #333;
+}
+
+tr:nth-child(even) {
+  background-color: #fff5fa;
+}
+
+tr:hover {
+  background-color: #fce4ec;
+}

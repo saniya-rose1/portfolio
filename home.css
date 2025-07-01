@@ -1,0 +1,69 @@
+/* Body styling */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg, #ffe6f0, #fcd3e1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+/* Main container */
+.container {
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+  max-width: 800px;
+  width: 90%;
+  text-align: center;
+}
+
+/* Heading */
+h1 {
+  color: #d14d72;
+  font-size: 2em;
+  margin-bottom: 20px;
+}
+
+/* Paragraph text */
+p {
+  font-size: 16px;
+  color: #333;
+  line-height: 1.5;
+}
+
+/* Image box layout */
+.image-boxes {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 30px;
+}
+
+/* Card for each image */
+.card {
+  background-color: #fff0f5;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  width: 250px;
+  text-align: center;
+}
+
+/* Images */
+.card img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+/* Caption */
+.card p {
+  color: #a0526d;
+  font-size: 14px;
+}

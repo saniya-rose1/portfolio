@@ -1,0 +1,91 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(to right, #ffe6f0, #fcd3e1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.form-box {
+  background: #ffffff;
+  padding: 30px;
+  width: 90%;
+  max-width: 400px;
+  border-radius: 15px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+  text-align: center;
+  color: #d14d72;
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  margin-top: 15px;
+  font-weight: bold;
+  color: #7a3e50;
+}
+
+input[type="text"], select {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+}
+
+.gender {
+  margin-top: 5px;
+}
+
+.gender label {
+  margin-right: 20px;
+  font-weight: normal;
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+/* Style both buttons with gradient and shadow */
+button, input[type="reset"] {
+  flex: 1;
+  margin: 0 5px;
+  padding: 12px 0;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+/* Submit button styling */
+button {
+  background: linear-gradient(to right, #ff5e94, #ec407a);
+  color: white;
+}
+
+button:hover {
+  background: linear-gradient(to right, #e91e63, #ad1457);
+  transform: scale(1.05);
+}
+
+/* Reset button styling */
+input[type="reset"] {
+  background: linear-gradient(to right, #ddd, #bbb);
+  color: #333;
+}
+
+input[type="reset"]:hover {
+  background: linear-gradient(to right, #bbb, #999);
+  transform: scale(1.05);
+}

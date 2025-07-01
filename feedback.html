@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Simple Form</title>
+  <link rel="stylesheet" href="feedback.css">
+</head>
+<body>
+
+  <div class="form-box">
+    <h2>Personal Info</h2>
+
+    <label>Name:</label>
+    <input type="text" id="name" placeholder="Your name">
+
+    <label>Nationality:</label>
+    <input type="text" id="nationality" placeholder="Your nationality">
+
+    <label>Gender:</label>
+    <div class="gender">
+      <label><input type="radio" name="gender" value="Male"> Male</label>
+      <label><input type="radio" name="gender" value="Female"> Female</label>
+    </div>
+
+    <label>Department:</label>
+    <select id="department">
+      <option>Select Department</option>
+      <option value="CSE">CSE</option>
+      <option value="ECE">ECE</option>
+      <option value="EEE">EEE</option>
+      <option value="ME">ME</option>
+    </select>
+    <br><br>
+
+    <div class="buttons">
+      <button onclick="submitForm()">Submit</button>
+      <input type="reset" value="Reset">
+    </div>
+
+    <p id="message"></p>
+  </div>
+
+  <script>
+    function submitForm() {
+      alert("Details submitted!");
+      document.getElementById("message").innerText = "✔ Form submitted successfully.";
+    }
+  </script>
+</body>
+</html>
